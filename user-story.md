@@ -18,11 +18,11 @@ US - User Story
 -->
 
 ### Feature: 
-US1:
+US1:As a college student, I want to search for items and filter the results by category and status, so that I can locate lost personal belongings on campus.
 
-US2:
+US2:As a faculty member, I want to submit a found item report with photos, descriptions, and locations, so that students and faculty can identify their lost belongings.
 
-US3:
+US3:As a campus user, I want to view item details in a modal dialog without leaving the main page, so that I can inspect the item's description and photos.
 
 ### Feature: 
 US1:
