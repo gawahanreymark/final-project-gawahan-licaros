@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindIT — Lost &amp; Found Board</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">FindIT</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="app.html" aria-current="page">Lost &amp; Found</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="items-title">
+      <h1 id="items-title">Lost &amp; Found Items</h1>
+      <div class="toolbar">
+        <label for="q" class="sr-only">Search items</label>
+        <input id="q" type="search" placeholder="Search item, location...">
+        <select id="filter-category" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+        </select>
+        <select id="filter-status" aria-label="Filter by status">
+          <option value="all">All Status</option>
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
+        </select>
+      </div>
+      <p id="result-count" aria-live="polite"></p>
+      <div id="grid" class="grid"></div>
+      <p id="empty" hidden>No items found. Try another search or report one below.</p>
+    </section>
+
+    <section id="report-section" aria-labelledby="report-title">
+      <h2 id="report-title">Report an Item</h2>
+      <form id="report-form" novalidate>
+        <div class="field">
+          <label for="f-type">Status *</label>
+          <select id="f-type" name="type">
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-name">Item Name *</label>
+          <input id="f-name" name="name" type="text" required placeholder="e.g. Black umbrella">
+          <p id="err-name" class="error" hidden>Please enter the item name.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-category">Category</label>
+          <select id="f-category" name="category"></select>
+        </div>
+
+        <div class="field">
+          <label for="f-location">Location *</label>
+          <input id="f-location" name="location" type="text" required placeholder="e.g. Library 2nd floor">
+          <p id="err-location" class="error" hidden>Please enter the location.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date">
+        </div>
+
+        <div class="field">
+          <label for="f-contact">Contact Info</label>
+          <input id="f-contact" name="contact" type="text" placeholder="Facebook or mobile number">
+        </div>
+
+        <div class="field">
+          <label for="f-description">Description</label>
+          <textarea id="f-description" name="description" rows="3" placeholder="Color, brand, or details..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit Report</button>
+      </form>
+    </section>
+  </main>
+
+  <dialog id="detail-dialog" aria-labelledby="dlg-title">
+    <button type="button" id="dlg-close" aria-label="Close details">×</button>
+    <span id="dlg-badge" class="badge"></span>
+    <h2 id="dlg-title"></h2>
+    <div id="dlg-body"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
